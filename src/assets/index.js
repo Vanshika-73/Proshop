@@ -1,7 +1,7 @@
-import SignUp from './SignUp.jpg';
+import Signup from './Signup.jpg';
 import login from './login.jpg';
 import mastercard from './mastercard.png';
 import rupay from './rupay.png';
 import visa from './visa.png';
 
-export {SignUp,login,mastercard,rupay,visa};
+export {Signup,login,mastercard,rupay,visa};

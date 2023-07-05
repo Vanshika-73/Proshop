@@ -9,7 +9,8 @@ import { registerUser } from "../slices/UserSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { createUserCart } from "../slices/CartSlice";
-import { SignUp } from "../assets";
+import { Signup } from "../assets";
+
 
 const Register = () => {
 const [name, setName] = useState("");
@@ -88,7 +89,7 @@ return (
         }}
       >
         <Box sx={{height:"100%",width:"50%"}}>
-        <img src={SignUp} alt="" style={{height:"100%"}} />
+        <img src={Signup} alt="" style={{height:"100%"}} />
         </Box>
         <Box sx={{height:"100%",width:"50%",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
         <Typography sx={{textAlign:"center"}} variant="h5">
