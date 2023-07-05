@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import login from "../assets/login.jpg";
+import {login} from "../assets/index.js";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../slices/UserSlice";
 import { useNavigate } from "react-router";

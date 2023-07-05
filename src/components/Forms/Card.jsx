@@ -1,9 +1,7 @@
 import { Box, Button, MenuItem, Select, Stack, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { usePaymentInputs } from "react-payment-inputs";
-import mastercard from '../../assets/mastercard.png';
-import visa from '../../assets/visa.png';
-import rupay from '../../assets/rupay.png';
+import { mastercard, rupay,visa } from "../../assets";
 function Card({handleChange,values}){
     const {getCardNumberProps, getExpiryDateProps, getCVCProps} = usePaymentInputs();
     return(

@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../slices/UserSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import signup from "../assets/signup.jpg";
+import {signup} from "../assets/index.js";
 import { createUserCart } from "../slices/CartSlice";
 
 const Register = () => {
