@@ -1,0 +1,14 @@
+#body{
+  min-height: 90vh;
+}
+footer{
+  margin: 1rem 0;
+  text-align: center;
+}
+#productNameLink:hover{
+  text-decoration: underline;
+}
+.navLink:hover{
+  cursor: pointer;
+  text-decoration: none;
+}
