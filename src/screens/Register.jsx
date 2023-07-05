@@ -8,8 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../slices/UserSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {SignUp} from "../assets/index.js";
 import { createUserCart } from "../slices/CartSlice";
+import { SignUp } from "../assets";
 
 const Register = () => {
 const [name, setName] = useState("");
