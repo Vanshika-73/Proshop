@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerUser } from "../slices/UserSlice";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import {signup} from "../assets/index.js";
+import {SignUp} from "../assets/index.js";
 import { createUserCart } from "../slices/CartSlice";
 
 const Register = () => {
@@ -88,7 +88,7 @@ return (
         }}
       >
         <Box sx={{height:"100%",width:"50%"}}>
-        <img src={signup} alt="" style={{height:"100%"}} />
+        <img src={SignUp} alt="" style={{height:"100%"}} />
         </Box>
         <Box sx={{height:"100%",width:"50%",display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
         <Typography sx={{textAlign:"center"}} variant="h5">
