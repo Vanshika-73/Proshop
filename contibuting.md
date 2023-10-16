@@ -4,4 +4,5 @@ Steps to contribute:
 3. Fork the repository.
 4. clone your forked repository.
 5. make changes.
-6. generate a pr and be patient to get it reviewed.
+6. Before pushing the code, don't forget to sync your repository and to run pull request first in order to sync the whole changes of the upstream branch.
+7. generate a pr and be patient to get it reviewed.
