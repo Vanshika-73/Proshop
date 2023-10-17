@@ -25,6 +25,7 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirm, setConfirm] = useState("");
   const [password_err, setPasswordErr] = useState(null);
+  const [email_err, setEmailErr] = useState(null);
   const [confirm_err, setConfirmErr] = useState(null);
   const [show, setShow] = useState(false);
   const [show2, setShow2] = useState(false);
@@ -56,6 +57,18 @@ const Register = () => {
     return false;
   };
 
+  const handleEmail = (email) => {
+    setEmail(email);
+    const emailMatchRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    if (!email.match(emailMatchRegex)) {
+      setEmailErr("Please enter a valid Email ID");
+    } else {
+      setEmailErr(null);
+      return true;
+    }
+    return false;
+  };
+
   const handleConfirm = (value) => {
     setConfirm(value);
     if (!(value === password)) {
@@ -69,7 +82,12 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name !== "" && handlePassword(password) && handleConfirm(confirm)) {
+    if (
+      name !== "" &&
+      handleEmail(email) &&
+      handlePassword(password) &&
+      handleConfirm(confirm)
+    ) {
       dispatch(registerUser({ name, email, password }));
       setError(null);
     } else {
@@ -142,11 +160,13 @@ const Register = () => {
               fullWidth
             />
             <TextField
+              error={email_err}
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => handleEmail(e.target.value)}
               label="Email"
               type={"email"}
               variant="standard"
+              helperText={email_err && email_err}
               fullWidth
             />
             <Box sx={{ display: "flex", position: "relative" }}>
