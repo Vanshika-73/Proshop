@@ -1,4 +1,4 @@
-import { Alert, Box, Button, Link, Paper, Stack, TextField, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {Alert,Box,Button,Link,Paper,Stack,TextField,Typography}from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import VisibilityIcon from "@mui/icons-material/Visibility";
@@ -8,16 +8,12 @@ import { loginUser } from "../slices/UserSlice";
 import { useNavigate } from "react-router";
 import { login } from "../assets";
 
-
 function Login() {
-  const { userInfo, error } = useSelector((state) => state.user);
+  const { userInfo,error } = useSelector((state) => state.user);
 
   useEffect(() => {
     userInfo && navigate("/");
   }, [userInfo]);
-
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -26,38 +22,64 @@ function Login() {
   // const [error, setError] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const handleSubmit = async (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     dispatch(loginUser({ email, password }));
   };
-
   return (
     <Stack justifyContent={"center"} alignItems={"center"}>
       <form onSubmit={handleSubmit}>
         <Paper
           elevation={4}
           sx={{
-            width: isSmallScreen ? "90vw" : "60vw",
-            height: "70vh",
+            minWidth: "60vw",
+            minHeight: "70vh",
             margin: 2,
-            padding: 7,
+            padding: {
+              xs: 4,
+              sm: 8,
+            },
             display: "flex",
-            flexDirection: isSmallScreen ? "column" : "row",
             justifyContent: "space-between",
+            flexDirection: {
+              xs: "column",
+              lg: "row",
+            },
+            gap: 5,
           }}
         >
-          <Box sx={{ height: "100%", width: isSmallScreen ? "100%" : "60%" }}>
-            <img src={login} alt="" style={{ height: "100%", width: "100%", objectFit: "cover" }} />
-          </Box>
+          {/* <Box sx={{ height: "100%", width: "60%" }}>
+            <img src={login} alt="" style={{ height: "100%" }} />
+          </Box> */}
           <Box
             sx={{
-              height: "100%",
-              width: isSmallScreen ? "100%" : "40%",
+              height: {
+                xs: "300px",
+                md: "380px",
+                lg: "450px",
+              },
+              width: {
+                xs: "100%",
+                lg: "50%",
+              },
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
+          <img src={login} alt="" style={{ height: "100%" }} />
+         </Box>
+         <Box  sx={{
+              height: "100%",
+              width: {
+                xs: "100%",
+                lg: "50%",
+              },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              gap: 3,
+            }}>
             <Typography sx={{ textAlign: "center" }} variant="h5">
               Sign In
             </Typography>
@@ -71,7 +93,7 @@ function Login() {
               variant="standard"
               fullWidth
             />
-            <Box sx={{ position: "relative" }}>
+            <Box sx={{ display: "flex", position: "relative" }}>
               <TextField
                 error={password_err}
                 value={password}
@@ -87,9 +109,8 @@ function Login() {
                   sx={{
                     cursor: "pointer",
                     position: "absolute",
-                    right: "5px",
-                    top: "50%",
-                    transform: "translateY(-50%)",
+                    right: "0%",
+                    bottom: "40%",
                   }}
                   onClick={() => setShow(!show)}
                 />
@@ -98,9 +119,8 @@ function Login() {
                   sx={{
                     cursor: "pointer",
                     position: "absolute",
-                    right: "5px",
-                    top: "50%",
-                    transform: "translateY(-50%)",
+                    right: "0%",
+                    bottom: "40%",
                   }}
                   onClick={() => setShow(!show)}
                 />
