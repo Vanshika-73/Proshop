@@ -32,26 +32,51 @@ function Login() {
         <Paper
           elevation={4}
           sx={{
-            width: "60vw",
-            height: "70vh",
+            minWidth: "60vw",
+            minHeight: "70vh",
             margin: 2,
-            padding: 7,
+            padding: {
+              xs: 4,
+              sm: 8,
+            },
             display: "flex",
             justifyContent: "space-between",
+            flexDirection: {
+              xs: "column",
+              lg: "row",
+            },
+            gap: 5,
           }}
         >
-          <Box sx={{ height: "100%", width: "60%" }}>
-            <img src={login} alt="" style={{ height: "100%" }} />
-          </Box>
           <Box
             sx={{
-              height: "100%",
-              width: "40%",
+              height: {
+                xs: "300px",
+                md: "490px",
+                lg: "450px",
+              },
+              width: {
+                xs: "100%",
+                lg: "50%",
+              },
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-evenly",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
+          <img src={login} alt="" style={{ height: "100%" }} />
+         </Box>
+         <Box  sx={{
+              height: "100%",
+              width: {
+                xs: "100%",
+                lg: "50%",
+              },
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              gap: 3,
+            }}>
             <Typography sx={{ textAlign: "center" }} variant="h5">
               Sign In
             </Typography>
