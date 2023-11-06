@@ -38,21 +38,46 @@ function Login() {
             padding: 7,
             display: "flex",
             justifyContent: "space-between",
+
+            // Media queries for responsiveness
+            '@media (max-width: 768px)': {
+              width: "85vw", // Adjust the width for tablet screens
+              height: "60vh", // Adjust the height for tablet screens
+              padding: 3,    // Adjust the padding for tablet screens
+            },
+            '@media (max-width: 480px)': {
+              width: "90vw", // Further adjust the width for mobile screens
+              height: "auto", // Further adjust the height for mobile screens
+              padding: 2,    // Further adjust the padding for mobile screens
+              flexDirection: "column",
+              justifyContent: "center",
+            },
+
           }}
         >
-          <Box sx={{ height: "100%", width: "60%" }}>
-            <img src={login} alt="" style={{ height: "100%" }} />
+          <Box 
+            sx={{ 
+              height: "100%", 
+              width: "100%",
+
+              // Media query for responsiveness
+              '@media (max-width: 480px)': {
+                height: "15rem", // Adjust the height for mobile screens
+                width: "100%",    // Adjust the width for mobile screens
+              },
+            }}>
+            <img src={login} alt="" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
           </Box>
           <Box
             sx={{
-              height: "100%",
-              width: "40%",
+              width: "100%",
               display: "flex",
               flexDirection: "column",
+              gap: "1.5rem",
               justifyContent: "space-evenly",
             }}
           >
-            <Typography sx={{ textAlign: "center" }} variant="h5">
+            <Typography sx={{ textAlign: "center", marginTop: "1rem", fontWeight: "bold" }} variant="h5">
               Sign In
             </Typography>
             {error && <Alert severity="error">{error}</Alert>}
